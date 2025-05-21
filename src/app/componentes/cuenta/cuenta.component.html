@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="card" style="background: whitesmoke;">
+    <div class="card-header p-4">
+      <h5 class="mb-0">
+        <i class="fa-solid fa-user-gear me-3"></i>Gestionar Cuenta
+      </h5>
+    </div>
+
+    <div class="card-body p-4">
+      <form class="row g-3" [formGroup]="loginForm" (ngSubmit)="actualizarCuenta()">
+        <!-- ID oculto -->
+        <input type="hidden" formControlName="idUsuario" />
+
+        <!-- Nombre (solo lectura y resaltado) -->
+        <div class="d-flex align-items-center">
+          <label class="me-3">Nombre:</label>
+          <input type="text" formControlName="nombre"
+                 class="form-control bg-light text-muted border border-secondary"
+                 readonly />
+        </div>
+
+        <!-- Teléfono -->
+        <div class="d-flex align-items-center">
+          <label class="me-3">Teléfono:</label>
+          <input type="text" formControlName="telefono"
+                 class="form-control"
+                 placeholder="Ingrese el teléfono" maxlength="10" />
+        </div>
+
+        <!-- Email oculto -->
+        <input type="hidden" formControlName="email" />
+
+        <!-- Ciudad -->
+        <div class="d-flex align-items-center">
+          <label class="me-3">Ciudad:</label>
+          <select formControlName="ciudad" class="form-select" required>
+            <option value="" disabled selected>Seleccione una ciudad</option>
+            @for (item of ciudades; track $index) {
+              <option [value]="item">{{ item }}</option>
+            }
+          </select>
+        </div>
+
+        <!-- Dirección -->
+        <div class="d-flex align-items-center">
+          <label class="me-3">Dirección:</label>
+          <input type="text" formControlName="direccion"
+                 class="form-control"
+                 placeholder="Ingrese la dirección" maxlength="100" />
+        </div>
+
+        <!-- Estado (nueva sección abajo) -->
+        <div class="d-flex align-items-center mt-3">
+          <label class="me-3">Estado:</label>
+          <span class="badge bg-success p-2">
+            {{ loginForm.get('estado')?.value || 'Activo' }}
+          </span>
+        </div>
+
+        <!-- Botones -->
+        <div class="d-flex justify-content-between mt-3">
+          <button type="submit" class="btn btn-primary w-50 me-2"
+                  [disabled]="loginForm.invalid">
+            Actualizar Cuenta
+          </button>
+
+          <button type="button" class="btn btn-danger w-50"
+                  (click)="eliminarCuenta()">
+            <i class="fa-solid fa-user-xmark me-2"></i>Eliminar Cuenta
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

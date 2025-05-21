@@ -1,0 +1,159 @@
+/* Estilos para la barra de navegación */
+.navbar {
+  background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%) !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 15px 20px;
+  transition: all 0.3s ease;
+}
+
+/* Estilo para el nombre de la aplicación */
+.navbar-brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 5px 15px;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand i {
+  color: #ffffff; /* ← Ahora es blanco */
+  text-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover i {
+  transform: scale(1.1);
+  color: #2ecc71;
+}
+
+/* Estilos para los ítems de navegación */
+.navbar-nav .nav-item {
+  margin: 0 5px;
+  position: relative;
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-weight: 500;
+  padding: 8px 15px !important;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.navbar-nav .nav-link.active {
+  background-color: rgba(255, 255, 255, 0.1); /* ← Mejor contraste */
+  color: #ffffff !important; /* ← Blanco en lugar de azul */
+  font-weight: 600;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  background-color: #2c3e50 !important;
+  margin-top: 10px;
+  min-width: 200px;
+}
+
+.dropdown-menu li {
+  padding: 5px;
+}
+
+.dropdown-menu .btn {
+  width: 100%;
+  text-align: left;
+  padding: 8px 15px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.dropdown-menu .dropdown-divider {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin: 8px 0;
+}
+
+/* Botones de Autenticación */
+.btn-outline-light {
+  border-width: 2px;
+  font-weight: 500;
+  padding: 8px 20px;
+  transition: all 0.3s;
+}
+
+.btn-outline-light:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: #3498db;
+  border-color: #3498db;
+  font-weight: 500;
+  padding: 8px 20px;
+  transition: all 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #2980b9;
+  border-color: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-danger {
+  margin-left: 15px;
+  font-weight: 500;
+  padding: 8px 20px;
+  transition: all 0.3s;
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Email del usuario logueado */
+.navbar label {
+  color: rgba(255, 255, 255, 0.85) !important;
+  padding: 8px 15px;
+  margin: 0 10px 0 0;
+  font-weight: 500;
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: inline-block;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 992px) {
+  .navbar-collapse {
+    background-color: rgba(26, 37, 47, 0.95);
+    border-radius: 8px;
+    margin-top: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar-nav {
+    padding-bottom: 10px;
+  }
+
+  .navbar label {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .btn-danger {
+    margin: 10px 0 0 0;
+    width: 100%;
+  }
+}

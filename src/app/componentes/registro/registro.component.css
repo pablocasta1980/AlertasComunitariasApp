@@ -1,0 +1,34 @@
+/* Aumenta espacio a la derecha del input para el ícono */
+.pr-5 {
+  padding-right: 3rem !important;
+}
+
+/* Mejora visual del contenedor */
+.card {
+  background: #ffffff;
+  border: none;
+}
+
+.card-header {
+  border-bottom: none;
+}
+
+.card-body input,
+.card-body select {
+  border-radius: 0.5rem;
+}
+
+/* Animación hover para el ícono */
+.fa-eye, .fa-eye-slash {
+  transition: color 0.2s ease;
+}
+
+.fa-eye:hover, .fa-eye-slash:hover {
+  color: #0d6efd;
+}
+
+/* Botón más estilizado */
+.btn-primary {
+  border-radius: 0.5rem;
+  font-weight: 600;
+}

@@ -1,0 +1,72 @@
+/* Estilo general del contenedor */
+.container {
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+/* Tarjeta del login */
+.shadow-lg {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Redondeado */
+.rounded-4 {
+  border-radius: 1rem;
+}
+
+/* Tamaño del ícono central */
+.fa-right-to-bracket {
+  color: #0d6efd;
+}
+
+/* Espacio extra para el ícono del ojo en el input */
+.pr-5 {
+  padding-right: 3rem !important;
+}
+
+/* Ícono del ojo en el campo de contraseña */
+.fa-eye,
+.fa-eye-slash {
+  position: absolute;
+  top: 60%;
+  right: 20px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6c757d;
+  font-size: 1.2rem;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.fa-eye:hover,
+.fa-eye-slash:hover {
+  color: #0d6efd;
+}
+
+/* Botón */
+.btn-primary {
+  background-color: #0d6efd;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+}
+
+/* Textos secundarios */
+.text-muted {
+  font-size: 0.9rem;
+}
+
+/* Responsive spacing */
+@media (max-width: 576px) {
+  .rounded-4 {
+    padding: 2rem 1.5rem;
+  }
+
+  .fa-eye,
+  .fa-eye-slash {
+    right: 15px;
+  }
+}

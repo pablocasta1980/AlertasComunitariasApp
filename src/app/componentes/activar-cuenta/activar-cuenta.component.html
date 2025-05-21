@@ -1,0 +1,50 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="col-md-6 col-lg-5">
+    <div class="card shadow-lg rounded-4 border-0">
+      <div class="card-body p-4">
+        <div class="text-center mb-4">
+          <i class="fa-solid fa-key fa-2x text-primary mb-3"></i>
+          <h3 class="fw-bold">Activar Cuenta</h3>
+          <p class="text-muted small">Ingrese el token que fue enviado a su correo electrónico.</p>
+        </div>
+
+        <form (ngSubmit)="ActivarCuenta()" #passwordForm="ngForm">
+          <div class="mb-3">
+            <label for="correo" class="form-label fw-semibold">Correo electrónico</label>
+            <input
+              type="email"
+              class="form-control form-control-lg"
+              formcontrolname="correo"
+              id="correo"
+              name="correo"
+              [(ngModel)]="cambioPassword.correo"
+              placeholder="ejemplo@correo.com"
+              readonly
+            />
+          </div>
+
+          <div class="mb-3">
+            <label for="comentarios" class="form-label fw-semibold">Token</label>
+            <textarea
+              [(ngModel)]="cambioPassword.token"
+              class="form-control form-control-lg"
+              rows="3"
+              id="comentarios"
+              name="comentarios"
+              placeholder="Ingrese el token recibido"
+              required
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary btn-lg w-100"
+            [disabled]="passwordForm.invalid"
+          >
+            Activar Cuenta
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

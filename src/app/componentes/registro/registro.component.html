@@ -1,0 +1,72 @@
+<div class="container my-5">
+  <div class="card shadow rounded-4">
+    <div class="card-header p-4 bg-primary text-white rounded-top-4">
+      <h5 class="mb-0">
+        <i class="fa-solid fa-user-plus me-2"></i> Crear Una Cuenta
+      </h5>
+    </div>
+
+    <div class="card-body p-4">
+      <form class="row g-3" [formGroup]="loginForm" (ngSubmit)="registrar()">
+        <div class="col-12">
+          <label class="form-label fw-semibold">Nombre:</label>
+          <input type="text" formControlName="nombre" class="form-control form-control-lg" placeholder="Ingrese el nombre y apellido" />
+        </div>
+
+        <div class="col-12">
+          <label class="form-label fw-semibold">Teléfono:</label>
+          <input type="text" formControlName="telefono" class="form-control form-control-lg" placeholder="Ingrese el teléfono" />
+        </div>
+
+        <div class="col-12">
+          <label class="form-label fw-semibold">Correo electrónico:</label>
+          <input type="email" formControlName="email" class="form-control form-control-lg" placeholder="Ingrese el correo electrónico" />
+        </div>
+
+        <div class="col-12">
+          <label class="form-label fw-semibold">Ciudad:</label>
+          <select formControlName="ciudad" required class="form-select form-select-lg">
+            <option value="" selected>Seleccione una ciudad</option>
+            @for (item of ciudades; track $index) {
+              <option [value]="item">{{item}}</option>
+            }
+          </select>
+        </div>
+
+        <div class="col-12">
+          <label class="form-label fw-semibold">Dirección:</label>
+          <input type="text" formControlName="direccion" class="form-control form-control-lg" placeholder="Ingrese la dirección" />
+        </div>
+
+        <!-- Campo de contraseña con ícono -->
+        <div class="col-12 position-relative">
+          <label class="form-label fw-semibold">Contraseña:</label>
+          <input 
+            [type]="mostrarPassword ? 'text' : 'password'" 
+            formControlName="password" 
+            class="form-control form-control-lg pr-5" 
+            placeholder="Digite la contraseña" 
+          />
+          <i 
+            class="fa-solid"
+            [ngClass]="mostrarPassword ? 'fa-eye-slash' : 'fa-eye'" 
+            (click)="mostrarPassword = !mostrarPassword"
+            style="position: absolute; top: 50%; right: 20px; transform: translateY(-50%); cursor: pointer; color: #6c757d;"
+          ></i>
+        </div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary btn-lg w-100" [disabled]="loginForm.invalid">
+            Registrarse
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="text-center p-4">
+      <h6 class="mb-0">¿Ya tienes una cuenta?
+        <a routerLink="/login" class="link-primary text-decoration-none fw-semibold">Iniciar Sesión</a>
+      </h6>
+    </div>
+  </div>
+</div>
