@@ -4,6 +4,9 @@ import { LoginDTO } from '../dto/LoginDTO';
 import { Observable } from 'rxjs';
 import { RutasDeNavegacion } from './rutadenavegacion';
 
+
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,7 +17,8 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   login(loginData: LoginDTO): Observable<any> {
-    return this.http.post(this.apiUrl+"/login", loginData);
+    //return this.http.post(this.apiUrl+"/login", loginData);
+    return this.http.post('https://proyecto-main-3vcz.onrender.com/api/auth/login', loginData);
   }
   
   recuperarContrasena(loginData: LoginDTO): Observable<any> {

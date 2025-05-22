@@ -1,5 +1,7 @@
 export const RutasDeNavegacion = {
     production: true,
-    apiUrl: 'http://localhost:8081/api/'
+   
+    apiUrl: 'https://proyecto-main-3vcz.onrender.com/api'
 };
   
+
