@@ -12,14 +12,14 @@ import { RutasDeNavegacion } from './rutadenavegacion';
 })
 export class LoginService {
 
-  private apiUrl = RutasDeNavegacion.apiUrl+"auth";
+  private apiUrl = RutasDeNavegacion.apiUrl+'auth';
 
   constructor(private http: HttpClient) {}
 
   login(loginData: LoginDTO): Observable<any> {
-    console.log(this.apiUrl+"/auth/login");
-    return this.http.post(this.apiUrl+"/auth/login", loginData);
-    //return this.http.post('https://proyecto-main-3vcz.onrender.com/api/auth/login', loginData);
+    
+    return this.http.post(this.apiUrl+"/login", loginData);
+   // return this.http.post('https://proyecto-main-3vcz.onrender.com/api/auth/login', loginData);
   }
 
  /* login(loginData: LoginDTO): Observable<any> {
