@@ -4,5 +4,5 @@ export class NotificacionesDTO {
         public notificacion_email: boolean = true,
     ) { }
 
-    // string = '',
+    
 }

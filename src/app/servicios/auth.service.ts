@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { RegistroUsuarioDTO } from '../dto/RegistroUsuarioDTO';
+//import { RegistroUsuarioDTO } from '../dto/RegistroUsuarioDTO';
 import { Observable } from 'rxjs';
 import { LoginDTO } from '../dto/LoginDTO';
 import { MensajeDTO } from '../dto/MensajeDTO';
@@ -23,9 +23,9 @@ export class AuthService {
     return this.http.post(`${this.authURL}/login`, loginData);
   }
 
-  public registrarCliente(cliente: RegistroUsuarioDTO): Observable<MensajeDTO>{
+ /* public registrarCliente(cliente: RegistroUsuarioDTO): Observable<MensajeDTO>{
     return this.http.post<MensajeDTO>(`${this.authURL}/registro`, cliente);
-  }
+  }*/
 
   public loginCliente(loginDTO: LoginDTO): Observable<MensajeDTO>{
     return this.http.post<MensajeDTO>(`${this.authURL}/login`, loginDTO);

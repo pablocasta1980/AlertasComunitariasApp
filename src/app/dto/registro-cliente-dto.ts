@@ -10,5 +10,3 @@ export class RegistroClienteDTO {
     ) { }
 }
 
-// Las Clases Dtos RegistroClienteDTO
-// se debe crear igual a los Dtos del backend

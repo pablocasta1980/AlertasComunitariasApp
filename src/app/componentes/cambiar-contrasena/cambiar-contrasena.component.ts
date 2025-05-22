@@ -75,8 +75,6 @@ export class CambiarContrasenaComponent implements OnInit {
           this.router.navigate(['/login']);
         }
 
-        // console.error(JSON.stringify(error));
-
         if (error.status === 500) {
           console.error('Error en el servidor');
         } 
