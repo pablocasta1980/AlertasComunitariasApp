@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LoginDTO } from '../dto/LoginDTO';
-import { Observable } from 'rxjs';
+import { delay, Observable } from 'rxjs';
 import { RutasDeNavegacion } from './rutadenavegacion';
 
 @Injectable({
@@ -13,9 +13,10 @@ export class LoginService {
 
   constructor(private http: HttpClient) {}
 
-  login(loginData: LoginDTO): Observable<any> {
-    return this.http.post(this.apiUrl+"/login", loginData);
-  }
+login(loginData: LoginDTO): Observable<any> {
+  console.log(`Endpoint de login: ${this.apiUrl}/login`);
+  return this.http.post(`${this.apiUrl}/login`, loginData).pipe();
+}
   
   recuperarContrasena(loginData: LoginDTO): Observable<any> {
     return this.http.post(this.apiUrl+"/recuperarPassword", loginData);
