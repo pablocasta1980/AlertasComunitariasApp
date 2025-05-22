@@ -17,9 +17,15 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
   login(loginData: LoginDTO): Observable<any> {
-    //return this.http.post(this.apiUrl+"/login", loginData);
-    return this.http.post('https://proyecto-main-3vcz.onrender.com/api/auth/login', loginData);
+    console.log(this.apiUrl+"/auth/login");
+    return this.http.post(this.apiUrl+"/auth/login", loginData);
+    //return this.http.post('https://proyecto-main-3vcz.onrender.com/api/auth/login', loginData);
   }
+
+ /* login(loginData: LoginDTO): Observable<any> {
+    console.log(`${RutasDeNavegacion.apiUrl}/auth/login`);
+    return this.http.post(`${RutasDeNavegacion.apiUrl}/auth/login`, loginData);
+}*/
   
   recuperarContrasena(loginData: LoginDTO): Observable<any> {
     return this.http.post(this.apiUrl+"/recuperarPassword", loginData);
