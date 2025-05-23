@@ -56,37 +56,31 @@ export class CambiarContrasenaComponent implements OnInit {
   }
 
 cambiarContrasena() {
-  this.cambioPasswordDto.token = this.cambioPassword.token;
-  this.cambioPasswordDto.email = this.cambioPassword.correo;
-  this.cambioPasswordDto.nuevaPassword = this.cambioPassword.nuevaContrasena;
+    this.cambioPasswordDto.token = this.cambioPassword.token;
+    this.cambioPasswordDto.email = this.cambioPassword.correo;
+    this.cambioPasswordDto.nuevaPassword = this.cambioPassword.nuevaContrasena;
 
-  console.log('Token enviado:', this.cambioPasswordDto);
+    console.log('Token enviado:', this.cambioPasswordDto);
 
-  this.authService.cambiarContraseña(this.cambioPasswordDto).subscribe({
-    next: (data) => {
-      console.log('Contraseña modificada correctamente');
-      
-      Swal.fire({
-        icon: 'success',
-        title: '¡Éxito!',
-        text: 'Contraseña modificada correctamente',
-        confirmButtonText: 'Aceptar'
-      }).then(() => {
-        this.router.navigate(['/login']);
-      });
-    },
-    error: (error) => {
-      console.error(JSON.stringify(error));
+    this.authService.cambiarContraseña(this.cambioPasswordDto).subscribe({
+      next: (data) => {
+        
+        console.log('Contraseña modificada correctamente');
+      },
+      error: (error) => {
+        console.error(JSON.stringify(error));
+        
+        if (error.status === 200) {
+          alert('Contraseña modificada correctamente');
 
-      if (error.status === 500) {
-        Swal.fire({
-          icon: 'error',
-          title: 'Error del servidor',
-          text: 'Ocurrió un problema al cambiar la contraseña.',
-          confirmButtonText: 'Cerrar'
-        });
-      }
-    },
-  });
-}
+          this.router.navigate(['/login']);
+        }
+
+        if (error.status === 500) {
+          console.error('Error en el servidor');
+        } 
+      },
+    });
+  }
+
 }
