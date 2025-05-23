@@ -9,7 +9,7 @@ import { RutasDeNavegacion } from './rutadenavegacion';
 })
 export class LoginService {
 
-  private apiUrl = RutasDeNavegacion.apiUrl+"/auth";
+  private apiUrl = RutasDeNavegacion.apiUrl+'auth';
 
   constructor(private http: HttpClient) {}
 

@@ -14,7 +14,7 @@ import { RutasDeNavegacion } from './rutadenavegacion';
 })
 export class AuthService {
 
-  private authURL = RutasDeNavegacion.apiUrl+"auth";
+  private authURL = RutasDeNavegacion.apiUrl+'auth';
 
   constructor(private http: HttpClient) { }
 
