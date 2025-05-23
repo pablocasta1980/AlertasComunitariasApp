@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'AlertasUrbanasFront' title`, () => {
+  it(`should have the 'AlertasComunitariasFront' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('AlertasUrbanasFront');
+    expect(app.title).toEqual('AlertasComunitariasFront');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, AlertasUrbanasFront');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, AlertasComunitariasFront');
   });
 });

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "AlertasUrbanasFront": {
+    "AlertasComunitariasFront": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/alertas-urbanas-front",
+            "outputPath": "dist/alertas-comunitarias-front",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "AlertasUrbanasFront:build:production"
+              "buildTarget": "AlertasComunitariasFront:build:production"
             },
             "development": {
-              "buildTarget": "AlertasUrbanasFront:build:development"
+              "buildTarget": "AlertasComunitariasFront:build:development"
             }
           },
           "defaultConfiguration": "development"
